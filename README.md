@@ -3,6 +3,9 @@
 > 🤖 Gráficos em tempo real com Django Framework 
 ### Backend Django com websocket, sqlite3 e ChartJs no frontend para aplicações em tempo real.
 
+https://user-images.githubusercontent.com/59855397/119253919-c3832e80-bb89-11eb-95eb-894db7948cd6.mp4
+
+
 ## 😃 Tecnologias envolvidas:
 
 + Django Framework
