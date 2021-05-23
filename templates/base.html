@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/heatmap.js/2.0.0/heatmap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    
+    <link href="{{STATIC_URL}}/static/css/darkMode.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}/static/css/style.css" rel="stylesheet">
+    <title>Gráficos em tempo real</title>
+
+    <style>
+        .drag {
+            width: 48%;
+            min-height: 6.5em;
+            margin: 10px;
+            background-color: var(--bg-panel);
+            color: var(--color-text);
+            border-radius: 0.75em;
+            padding: 10px;
+            touch-action: none;
+            user-select: none;
+            transform: translate(0px, 0px);
+            }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg dark-container">
+                
+
+            
+            <div class="container">
+                <a class="navbar-brand" href="#">Dashboard</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Manual</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Relatórios</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex my-2 my-lg-0">
+                        <p class="my-2 my-sm-0">Modo escuro</p>
+                        <input class="form-control me-sm-2" type="checkbox" id="switch" name="theme">
+                        <label for="switch">Mudar</label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+        
+
+    <div class="row container-fluid">
+        <div class="row align-items-center">
+            <div class="col-6 draggable drag">
+                <canvas id='chart1' ></canvas>
+            </div>
+            <div class="col-6 draggable drag demo-wrapper heatmap text-center">
+                <img class="rounded" src="{{STATIC_URL}}/static/img/foot.png" width="290px" height="430px" alt="">
+            </div>
+            <div class="col-6 draggable drag">
+                <canvas id='chart2'></canvas>
+            </div>
+            <div class="col-6 draggable drag">
+                <canvas id='chart3' ></canvas>
+            </div>
+            <div class="col-6 draggable drag">
+                <canvas id='chart4' ></canvas>
+            </div>
+            <div class="col-6 draggable drag">
+                <canvas id='chart5' ></canvas>
+            </div>
+            <div class="col-6 draggable drag">
+                <canvas id='chart6' ></canvas>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/dragDrop.js' %}"></script>
+    <script src="{% static 'js/themeDark.js' %}"></script>
+    <script src="{% static 'js/heatmap.js' %}"></script>
+</body>
+</html>
